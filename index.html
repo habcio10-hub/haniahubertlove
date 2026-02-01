@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dla Hani ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+color:#4a1c2a;
+text-align:center;
+}
+
+header{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+h1{
+font-family:'Playfair Display',serif;
+font-size:3rem;
+margin-bottom:10px;
+}
+
+h2{
+font-weight:300;
+margin-bottom:30px;
+}
+
+button{
+background:#c9184a;
+border:none;
+color:white;
+padding:15px 30px;
+font-size:1.1rem;
+border-radius:30px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+background:#a4133c;
+transform:scale(1.05);
+}
+
+.section{
+padding:60px 20px;
+max-width:800px;
+margin:auto;
+}
+
+.card{
+background:rgba(255,255,255,0.85);
+padding:25px;
+border-radius:20px;
+margin:20px 0;
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+footer{
+padding:20px;
+font-size:.9rem;
+opacity:.7;
+}
+
+.heart{
+position:fixed;
+color:#c9184a;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);opacity:0}
+10%{opacity:1}
+100%{transform:translateY(-10vh);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Haniu, kocham Cię ❤️</h1>
+<h2>Najpiękniejsze Walentynki są z Tobą</h2>
+<button onclick="scrollToLove()">Kliknij tu</button>
+</header>
+
+<div class="section" id="love">
+
+<div class="card">
+<h3>Dlaczego Ty?</h3>
+<p>Bo jesteś moim szczęściem.</p>
+<p>Bo rozśmieszasz mnie każdego dnia.</p>
+<p>Bo jesteś moim domem.</p>
+</div>
+
+<div class="card">
+<h3>Nasze chwile</h3>
+<p>💖 Pierwsze spotkanie</p>
+<p>✈️ Pierwszy wyjazd</p>
+<p>💬 Pierwsze „kocham Cię”</p>
+<p>🌙 Każdy dzień razem</p>
+</div>
+
+<div class="card">
+<h3>Dla Ciebie</h3>
+<p>Zawsze będę przy Tobie.</p>
+<p>Na dobre i na złe ❤️</p>
+</div>
+
+<div class="card">
+<h3>Jedno pytanie…</h3>
+<button onclick="showLove()">Czy zostaniesz moją Walentynką?</button>
+</div>
+
+</div>
+
+<footer>
+Z miłości — Hubert 💖
+</footer>
+
+<script>
+function scrollToLove(){
+document.getElementById("love").scrollIntoView({behavior:"smooth"});
+}
+
+function showLove(){
+alert("Kocham Cię najmocniej na świecie ❤️");
+}
+
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(15+Math.random()*20)+"px";
+heart.style.animationDuration=(4+Math.random()*4)+"s";
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove()},6000);
+}
+
+setInterval(createHeart,500);
+</script>
+
+</body>
+</html>
